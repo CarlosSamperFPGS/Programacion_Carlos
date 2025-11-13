@@ -9,44 +9,44 @@ import java.util.Scanner;
 
 public class Ejercicio8 {
     // Función para verificar si un año es bisiesto
-    public static boolean esBisiesto(int anio) {
-        return (anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0);
+    public static boolean isLeapYear(int year) {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 
     // Función para verificar si la fecha es correcta
-    public static boolean fechaCorrecta(int dia, int mes, int anio) {
-        if (anio < 1 || mes < 1 || mes > 12 || dia < 1) {
+    public static boolean isDateCorrect(int day, int month, int year) {
+        if (year < 1 || month < 1 || month > 12 || day < 1) {
             return false;
         }
 
-        int[] diasPorMes = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int[] daysPerMonth = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-        if (esBisiesto(anio)) {
-            diasPorMes[2] = 29;
+        if (isLeapYear(year)) {
+            daysPerMonth[2] = 29;
         }
 
-        return dia <= diasPorMes[mes];
+        return day <= daysPerMonth[month];
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Introduce el día:");
-        int dia = sc.nextInt();
+        int inputDay = scanner.nextInt();
 
         System.out.println("Introduce el mes:");
-        int mes = sc.nextInt();
+        int inputMonth = scanner.nextInt();
 
         System.out.println("Introduce el año:");
-        int anio = sc.nextInt();
+        int inputYear = scanner.nextInt();
 
-        if (fechaCorrecta(dia, mes, anio)) {
-            System.out.println("La fecha " + dia + "/" + mes + "/" + anio + " es correcta.");
+        if (isDateCorrect(inputDay, inputMonth, inputYear)) {
+            System.out.println("La fecha " + inputDay + "/" + inputMonth + "/" + inputYear + " es correcta.");
         } else {
-            System.out.println("La fecha " + dia + "/" + mes + "/" + anio + " no es correcta.");
+            System.out.println("La fecha " + inputDay + "/" + inputMonth + "/" + inputYear + " no es correcta.");
         }
 
-        sc.close();
+        scanner.close();
     }
 }
 // 𝓗𝓮𝓬𝓱𝓸 𝓹𝓸𝓻 𝓗𝓪𝔃𝓪𝓻𝓭

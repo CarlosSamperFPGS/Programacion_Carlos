@@ -10,15 +10,15 @@ import java.util.Scanner;
 
 public class Ejercicio9 {
     // Procedimiento para dibujar el triángulo en árbol
-    public static void dibujarTriangulo(char caracter, int numLineas) {
-        for (int i = 1; i <= numLineas; i++) {
+    public static void drawTriangle(char character, int numberOfLines) {
+        for (int i = 1; i <= numberOfLines; i++) {
             // Imprimir espacios en blanco a la izquierda
-            for (int j = 1; j <= numLineas - i; j++) {
+            for (int j = 1; j <= numberOfLines - i; j++) {
                 System.out.print(" ");
             }
             // Imprimir el carácter
             for (int k = 1; k <= 2 * i - 1; k++) {
-                System.out.print(caracter);
+                System.out.print(character);
             }
             // Salto de línea
             System.out.println();
@@ -26,12 +26,13 @@ public class Ejercicio9 {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Introduce un carácter");
-        char caracter = sc.next().charAt(0);
+        char inputCharacter = scanner.next().charAt(0);
         System.out.println("Introduce el número de líneas del triángulo");
-        int numLineas = sc.nextInt();
-        dibujarTriangulo(caracter, numLineas);
+        int numberOfLines = scanner.nextInt();
+        drawTriangle(inputCharacter, numberOfLines);
+        scanner.close();
     }
 }
 

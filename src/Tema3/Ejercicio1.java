@@ -6,23 +6,23 @@ import java.util.Scanner;
 
 public class Ejercicio1 {
 
-    // Función para saber si un número es positivo o negativo
-    public static int  numberSing (int num) {
-        int isPositive = Integer.compare(num, 0);
-        return isPositive == 0 ? num : isPositive;
+    // Función para saber si un número es positivo, negativo o cero
+    public static int checkNumberSign(int number) {
+        return Integer.compare(number, 0);
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int num = sc.nextInt();
-        int isPositive = numberSing(num);
-        if (isPositive == 0) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Introduce un número: ");
+        int inputNumber = scanner.nextInt();
+        int sign = checkNumberSign(inputNumber);
+        
+        if (sign == 0) {
             System.out.println("El número es igual a 0");
-        } else if (isPositive == 1) {
+        } else if (sign > 0) {
             System.out.println("El número es positivo");
         } else {
             System.out.println("El número es negativo");
         }
     }
 }
-

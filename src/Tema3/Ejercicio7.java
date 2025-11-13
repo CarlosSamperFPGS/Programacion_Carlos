@@ -9,12 +9,12 @@ import java.util.Scanner;
 
 public class Ejercicio7 {
     // Función para saber si un número es primo
-    public static boolean esPrimo(int num) {
-        if (num <= 1) {
+    public static boolean isPrime(int number) {
+        if (number <= 1) {
             return false;
         }
-        for (int i = 2; i <= Math.sqrt(num); i++) {
-            if (num % i == 0) {
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
                 return false;
             }
         }
@@ -22,26 +22,26 @@ public class Ejercicio7 {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int num;
+        Scanner scanner = new Scanner(System.in);
+        int inputNumber;
 
         do {
             System.out.println("Introduce un número entero positivo (0 para salir):");
-            num = sc.nextInt();
+            inputNumber = scanner.nextInt();
 
-            if (num > 0) {
-                if (esPrimo(num)) {
-                    System.out.println(num + " es un número primo.");
+            if (inputNumber > 0) {
+                if (isPrime(inputNumber)) {
+                    System.out.println(inputNumber + " es un número primo.");
                 } else {
-                    System.out.println(num + " no es un número primo.");
+                    System.out.println(inputNumber + " no es un número primo.");
                 }
-            } else if (num < 0) {
+            } else if (inputNumber < 0) {
                 System.out.println("Por favor, introduce un número positivo.");
             }
-        } while (num != 0);
+        } while (inputNumber != 0);
 
         System.out.println("Programa finalizado.");
-        sc.close();
+        scanner.close();
     }
 }
 // 𝓗𝓮𝓬𝓱𝓸 𝓹𝓸𝓻 𝓗𝓪𝔃𝓪𝓻𝓭

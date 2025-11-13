@@ -13,7 +13,7 @@ public class Ejercicio6 {
     public static void main(String[] args) {
         for (int i = 1; i <= 10; i++) {
             System.out.println("Tabla de multiplicar del " + i);
-            Ejercicio5.TablaDeMultiplicar(i);
+            Ejercicio5.showMultiplicationTable(i);
             System.out.println(); // Para una línea en blanco entre tablas
         }
     }
