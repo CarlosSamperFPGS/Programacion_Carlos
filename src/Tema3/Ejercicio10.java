@@ -7,6 +7,8 @@ package Tema3;
 
 import java.util.Scanner;
 
+import static Tema3.Ejercicio1.checkNumberSign;
+
 public class Ejercicio10 {
     // Procedimiento del menú para este ejercicio
     public static void showMainMenu() {
@@ -37,7 +39,7 @@ public class Ejercicio10 {
                     System.out.println("Has elegido la opción 1");
                     System.out.println("Introduce un número");
                     int numberToCheck = scanner.nextInt();
-                    int sign = Ejercicio1.checkNumberSign(numberToCheck);
+                    int sign = checkNumberSign(numberToCheck);
                     if (sign == 0) {
                         System.out.println("El número es igual a 0");
                     } else if (sign > 0) {
