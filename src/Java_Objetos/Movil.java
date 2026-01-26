@@ -43,4 +43,12 @@ public class Movil {
     public void cargarMovil() {
         bateria = 100;
     }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
 }
