@@ -68,7 +68,7 @@ public class Hero {
         int damagePotential = Math.max(this.attack - enemy.getDefense(), MinDamageCalc);
         
         // Daño real: Entre 1 y damagePotential
-        int damageDealt = random.nextInt(damagePotential) + 1;
+        int damageDealt = random.nextInt(damagePotential) + MinDamageDealt;
         // nextInt(N) devuelve 0..N-1. 
         // Queremos 1..N. -> nextInt(N) + 1.
         
@@ -160,7 +160,6 @@ public class Hero {
         this.defense = defense;
     }
 
-    @Override
     public String toString() {
         return "Heroe: " + name + " | Lvl: " + level + " | HP: " + health + "/" + maxHealth + 
                " | Atk: " + attack + " | Def: " + defense + " | XP: " + experience;
